@@ -3,10 +3,10 @@ public class MergeSort {
     private static void mergeSort(int[] arr, int l, int r) {
         if(l < r){
             int mid = (l+r)/2;
-            mergeSort(arr,l,mid);
+            mergeSort(arr,l,mid);   //recursion for multiple arrays which are in tree format
             mergeSort(arr,mid+1,r); 
 
-            merge(arr, l , mid , r);
+            merge(arr, l , mid , r);  // divide and conquar array
         }
    } 
    private static void merge(int[] arr, int l, int mid, int r) {
@@ -14,7 +14,7 @@ public class MergeSort {
         int n2 = r - mid;
         int larr[] = new int[n1];
         int rarr[] = new int[n2];
-
+        // seperating two arrays of exisiting array and put values
         for(int i = 0 ; i < n1 ; i++)
         {
             larr[i] = arr[i+l];
@@ -24,7 +24,7 @@ public class MergeSort {
         {
             rarr[j] = arr[j+mid +1];
         }
-        
+        //merging array
         int i = 0;
         int j = 0;
         int k = l;
